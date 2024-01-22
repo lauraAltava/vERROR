@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title %}Empleados{% endblock %}
+{% block body %}
+    <h1>Listado de empleados</h1>
+
+       {% if app.user %}
+        
+        <a href="/empleado/nuevo">Alta</a>  |  <a href="/logout">Salir</a>
+
+        {% else %}
+        <a href="/login">Login</a> | <a href="/register">Registrarse</a>
+        
+    {% endif %}
+
+
+    {% if empleados %}
+    
+</br>
+
+</br>
+
+        {% for empleado in empleados %}
+            {{ include ('partials/datos_empleado.html.twig', { 'empleado': empleado }) }}
+    {% endfor %}
+{% else %}
+        <p> No se han encontrado empleados</p>
+    {% endif %}
+{% endblock %}

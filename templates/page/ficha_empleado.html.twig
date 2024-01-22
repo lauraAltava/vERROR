@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block title %}Empleados{% endblock %}
+{% block body %}
+    <h1>Ficha del empleado</h1>
+    {% if empleado %}
+    {{ include ('partials/datos_empleado.html.twig', { 'empleado': empleado }) }}
+    <li><img src="{{ asset('/images/'~ empleado.foto) }}" width="100" height="150" /></li>
+    {% else %}
+        <p> empleado no encontrado</p>
+    {% endif %}
+{% endblock %}

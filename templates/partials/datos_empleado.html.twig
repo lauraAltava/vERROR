@@ -1,0 +1,20 @@
+
+<ul>
+
+    <a href="/empleado/{{empleado.id}}"><li><strong>{{ empleado.nombre }} {{ empleado.apellidos }}</strong></a></li>
+    
+  
+    <li><img src="{{ asset('/images/'~ empleado.foto) }}" width="150" height="100" /></li>
+
+    {% if empleado.seccion %}
+    <li><strong>Seccion</strong>: {{ empleado.seccion.nombre }}</li>
+    {% endif %}
+
+    <a href="/empleado/nuevo/{{empleado.id}}">Alta</a> 
+    <a href="/empleado/delete/{{empleado.id}}">Baja</a> 
+    
+    
+    <!--<a href="/empleado/editar/{{empleado.id}}">Editar</a> -->
+    
+
+</ul>
